@@ -9,12 +9,26 @@ class TableEntry {
     public:
 	    std:: string key;
 	    V value;
-	    TableEntry(std::string key, V value){}
-	    TableEntry(std::string key){}
-	    TableEntry();
-	    friend bool operator==(const TableEntry<V> &te1, const TableEntry<V> &te2){}
-	    friend bool operator!=(const TableEntry<V> &te1, const TableEntry<V> &te2){}
-	    friend std::ostream& operator<<(std::ostream &out, const TableEntry<V> &te){}
+	    TableEntry(std::string key, V value){
+	     this -> key = key;
+	     this -> value = value;
+	    }
+	    TableEntry(std::string key){
+	 	this->key = key;   
+	    }
+	    TableEntry(){
+	    	key= " ";
+	    }
+	    friend bool operator==(const TableEntry<V> &te1, const TableEntry<V> &te2){
+	    	return te1.key==te2.key;
+	    }//podria poner if(te1.key==..)return true
+	    friend bool operator!=(const TableEntry<V> &te1, const TableEntry<V> &te2){
+	    	return te1.key!=te2.key;
+	    }
+	    friend std::ostream& operator<<(std::ostream &out, const TableEntry<V> &te){
+	    	out << "Llave:" <<te.key << "/" << "Valor: " <<te.value;
+		return out;
+	    }
 
         // miembros públicos
     
