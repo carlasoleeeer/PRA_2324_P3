@@ -29,6 +29,18 @@ class TableEntry {
 	    	out << "Llave:" <<te.key << "/" << "Valor: " <<te.value;
 		return out;
 	    }
+	     friend bool operator<(const TableEntry<V> &te1, const TableEntry<V> &te2){
+		    if(te1.key < te2.key)
+			return true;
+	    	    else
+			return false;
+	    }
+	    friend bool operator>(const TableEntry<V> &te1, const TableEntry<V> &te2){
+		    if(te1.key > te2.key)
+			    return true;
+		    else
+			    return false;
+	    }
 
         // miembros públicos
     
