@@ -27,15 +27,15 @@ class HashTable: public Dict<V> {
 	}
 	int n;
 	int max;
-	ListLinked<TableEntry<V>>*table;	
+	 ListLinked<TableEntry<V>>*table;	
         // ...
 
     public:
 	HashTable(int size){
+		table= new ListLinked<TableEntry<V>>[size];
 		n=0;
                 max=size;
 
-		table= new ListLinked<TableEntry<V>> [size];
 	
 	}
 	~HashTable(){
