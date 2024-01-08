@@ -32,14 +32,15 @@ class HashTable: public Dict<V> {
 
     public:
 	HashTable(int size){
+		n=0;
+                max=size;
+
 		table= new ListLinked<TableEntry<V>> [size];
 	
-		n=0;
-		max=size;
 	}
 	~HashTable(){
 		for(int i =0; i < max; i ++)
-			table[i]. ~ListsLinked();
+			table[i]. ~ListLinked();
 
 
 		delete[] table;
@@ -75,7 +76,7 @@ class HashTable: public Dict<V> {
 	
 	}
 	void insert(std::string key, V value)override{
-		int posEntry =table[ h(key)].search.key;
+		int posEntry =table[ h(key)].search(key);
 		
 
 		if(posEntry >=0 ){
